@@ -17,13 +17,13 @@ public class ReservationController {
         this.reservationRestfulClient = reservationRestfulClient;
     }//constructor based injection
 
-    @RequestMapping("/startCheckIn")
+    @RequestMapping("/start-check-in")
     public String startCheckIn(){
         return "startCheckIn";
     }
 
 
-@RequestMapping("/proceedCheckIn")
+@RequestMapping("/proceed-check-in")
 public String proceedCheckIn(@RequestParam("id") Long id, ModelMap modelMap) {
 
     Reservation allReservationData = reservationRestfulClient.findReservation(id);
@@ -36,7 +36,7 @@ public String proceedCheckIn(@RequestParam("id") Long id, ModelMap modelMap) {
         }
 //    allReservationData.getAllData();//this will call the getAllData() from dto class and will get all data displayed on console
     }
-    @RequestMapping("/checkInConfirmation")
+    @RequestMapping("/check-in-confirmation")
     public String checkInConfirmation(
             @RequestParam("id") Long id,
             @RequestParam("numberOfBags") Integer numberOfBags,
